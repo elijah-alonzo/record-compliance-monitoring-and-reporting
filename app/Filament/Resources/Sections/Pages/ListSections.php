@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources\Sections\Pages;
 
+use App\Filament\Imports\SectionImporter;
 use App\Filament\Resources\Sections\SectionResource;
 use Filament\Actions\CreateAction;
+use Filament\Actions\ImportAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListSections extends ListRecords
@@ -14,6 +16,8 @@ class ListSections extends ListRecords
     {
         return [
             CreateAction::make(),
+            ImportAction::make()
+                ->importer(SectionImporter::class),
         ];
     }
 }

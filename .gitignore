@@ -22,3 +22,10 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/public/css/filament
+/public/js/filament
+/public/fonts/filament
+/public/sys-blog.jpg
+/database/*.sqlite
+/.phpstan.cache
+desktop.ini

@@ -2,12 +2,13 @@
 
 namespace App\Filament\Resources\Sections;
 
+use App\Features\Sections\Models\Section;
 use App\Filament\Resources\Sections\Pages\CreateSection;
 use App\Filament\Resources\Sections\Pages\EditSection;
 use App\Filament\Resources\Sections\Pages\ListSections;
+use App\Filament\Resources\Sections\Pages\ViewSection;
 use App\Filament\Resources\Sections\Schemas\SectionForm;
 use App\Filament\Resources\Sections\Tables\SectionsTable;
-use App\Models\Section;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -24,6 +25,8 @@ class SectionResource extends Resource
     protected static ?string $navigationLabel = 'Sections';
 
     protected static UnitEnum|string|null $navigationGroup = 'Academic Management';
+
+    protected static ?int $navigationSort = 2;
 
     public static function form(Schema $schema): Schema
     {
@@ -47,6 +50,7 @@ class SectionResource extends Resource
         return [
             'index' => ListSections::route('/'),
             'create' => CreateSection::route('/create'),
+            'view' => ViewSection::route('/{record}'),
             'edit' => EditSection::route('/{record}/edit'),
         ];
     }

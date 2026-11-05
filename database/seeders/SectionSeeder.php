@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Section;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Features\Courses\Models\Course;
+use App\Features\Sections\Enums\YearLevel;
+use App\Features\Sections\Models\Section;
 use Illuminate\Database\Seeder;
 
 class SectionSeeder extends Seeder
@@ -16,56 +17,70 @@ class SectionSeeder extends Seeder
         $sections = [
             [
                 'code' => 'BSN1',
-                'name' => 'Bachelor of Science in Nursing',
-                'year_level' => '1st Year',
+                'year_level' => YearLevel::First->value,
                 'department_id' => 1, // Assuming first department
+                'course_name' => 'Bachelor of Science in Nursing',
             ],
             [
                 'code' => 'BSN2',
-                'name' => 'Bachelor of Science in Nursing',
-                'year_level' => '2nd Year',
+                'year_level' => YearLevel::Second->value,
                 'department_id' => 1,
+                'course_name' => 'Bachelor of Science in Nursing',
             ],
             [
                 'code' => 'BSN3',
-                'name' => 'Bachelor of Science in Nursing',
-                'year_level' => '3rd Year',
+                'year_level' => YearLevel::Third->value,
                 'department_id' => 1,
+                'course_name' => 'Bachelor of Science in Nursing',
             ],
             [
                 'code' => 'BSN4',
-                'name' => 'Bachelor of Science in Nursing',
-                'year_level' => '4th Year',
+                'year_level' => YearLevel::Fourth->value,
                 'department_id' => 1,
+                'course_name' => 'Bachelor of Science in Nursing',
             ],
             [
                 'code' => 'BSCS1',
-                'name' => 'Bachelor of Science in Information Technology',
-                'year_level' => '1st Year',
+                'year_level' => YearLevel::First->value,
                 'department_id' => 2, // Assuming second department
+                'course_name' => 'Bachelor of Science in Information Technology',
             ],
             [
                 'code' => 'BSCS2',
-                'name' => 'Bachelor of Science in Information Technology',
-                'year_level' => '2nd Year',
+                'year_level' => YearLevel::Second->value,
                 'department_id' => 2,
+                'course_name' => 'Bachelor of Science in Information Technology',
             ],
             [
                 'code' => 'BSCS3',
-                'name' => 'Bachelor of Science in Information Technology',
-                'year_level' => '3rd Year',
+                'year_level' => YearLevel::Third->value,
                 'department_id' => 2,
+                'course_name' => 'Bachelor of Science in Information Technology',
             ],
             [
                 'code' => 'BSCS4',
-                'name' => 'Bachelor of Science in Information Technology',
-                'year_level' => '4th Year',
+                'year_level' => YearLevel::Fourth->value,
                 'department_id' => 2,
+                'course_name' => 'Bachelor of Science in Information Technology',
             ],
         ];
 
         foreach ($sections as $section) {
-            Section::create($section);
+            $courseId = Course::query()
+                ->where('department_id', $section['department_id'])
+                ->where('name', $section['course_name'])
+                ->value('id');
+
+            if (! $courseId) {
+                continue;
+            }
+
+            Section::create([
+                'code' => $section['code'],
+                'year_level' => $section['year_level'],
+                'department_id' => $section['department_id'],
+                'course_id' => $courseId,
+            ]);
         }
 
         $this->command->info('Section seeder completed successfully.');

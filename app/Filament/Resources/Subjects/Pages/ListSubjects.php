@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\Subjects\Pages;
 
+use App\Filament\Imports\SubjectImporter;
 use App\Filament\Resources\Subjects\SubjectResource;
 use Filament\Actions;
-use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListSubjects extends ListRecords
@@ -15,6 +15,8 @@ class ListSubjects extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+            Actions\ImportAction::make()
+                ->importer(SubjectImporter::class),
         ];
     }
 }

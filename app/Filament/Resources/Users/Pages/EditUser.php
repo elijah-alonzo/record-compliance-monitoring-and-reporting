@@ -10,7 +10,7 @@ class EditUser extends EditRecord
 {
     protected static string $resource = UserResource::class;
 
-    protected ?string $heading = 'Edit Registrar Staff';
+    protected ?string $heading = 'Edit User';
 
     protected function getHeaderActions(): array
     {

@@ -2,16 +2,16 @@
 
 namespace App\Filament\Resources\Subjects;
 
+use App\Features\Subjects\Models\Subject;
 use App\Filament\Resources\Subjects\Pages\CreateSubject;
 use App\Filament\Resources\Subjects\Pages\EditSubject;
 use App\Filament\Resources\Subjects\Pages\ListSubjects;
+use App\Filament\Resources\Subjects\Pages\ViewSubject;
 use App\Filament\Resources\Subjects\Schemas\SubjectForm;
 use App\Filament\Resources\Subjects\Tables\SubjectsTable;
-use App\Models\Subject;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 
@@ -24,6 +24,8 @@ class SubjectResource extends Resource
     protected static ?string $navigationLabel = 'Subjects';
 
     protected static UnitEnum|string|null $navigationGroup = 'Academic Management';
+
+    protected static ?int $navigationSort = 3;
 
     public static function form(Schema $schema): Schema
     {
@@ -47,6 +49,7 @@ class SubjectResource extends Resource
         return [
             'index' => ListSubjects::route('/'),
             'create' => CreateSubject::route('/create'),
+            'view' => ViewSubject::route('/{record}'),
             'edit' => EditSubject::route('/{record}/edit'),
         ];
     }

@@ -2,39 +2,33 @@
 
 namespace App\Filament\Resources\Users;
 
+use App\Features\Users\Models\User;
 use App\Filament\Resources\Users\Pages\CreateUser;
 use App\Filament\Resources\Users\Pages\EditUser;
 use App\Filament\Resources\Users\Pages\ListUsers;
+use App\Filament\Resources\Users\Pages\ViewUser;
 use App\Filament\Resources\Users\Schemas\UserForm;
 use App\Filament\Resources\Users\Tables\UsersTable;
-use App\Models\User;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
-use Illuminate\Support\Facades\Auth;
 
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedShieldCheck;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUser;
 
-    protected static ?string $navigationLabel = 'Registrar';
+    protected static ?string $navigationLabel = 'Users';
 
     protected static UnitEnum|string|null $navigationGroup = 'User Management';
 
     public static function form(Schema $schema): Schema
     {
         return UserForm::configure($schema);
-    }
-
-    public static function canAccess(): bool
-    {
-        $user = Auth::user();
-        return $user && $user->role === 'head';
     }
 
     public static function table(Table $table): Table
@@ -54,6 +48,7 @@ class UserResource extends Resource
         return [
             'index' => ListUsers::route('/'),
             'create' => CreateUser::route('/create'),
+            'view' => ViewUser::route('/{record}'),
             'edit' => EditUser::route('/{record}/edit'),
         ];
     }

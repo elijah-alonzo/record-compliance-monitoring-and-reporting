@@ -3,8 +3,11 @@
 namespace App\Filament\Resources\Departments\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Support\Colors\Color;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -13,40 +16,48 @@ class DepartmentsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->heading('Department Information')
+            ->description('List of departments along with their details.')
+            ->defaultPaginationPageOption(50)
+            ->extremePaginationLinks()
             ->columns([
                 TextColumn::make('code')
                     ->label('Code')
                     ->searchable()
                     ->sortable()
                     ->badge()
-                    ->color('primary'),
+                    ->color(fn ($record): string|array => self::resolveDepartmentColor($record->code, $record->color))
+                    ->toggleable(),
 
                 TextColumn::make('name')
                     ->label('Department Name')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(),
 
                 TextColumn::make('faculties_count')
                     ->label('Faculties')
                     ->counts('faculties')
                     ->sortable()
                     ->badge()
-                    ->color('info'),
+                    ->color('info')
+                    ->toggleable(),
 
                 TextColumn::make('sections_count')
                     ->label('Sections')
                     ->counts('sections')
                     ->sortable()
                     ->badge()
-                    ->color('success'),
+                    ->color('success')
+                    ->toggleable(),
 
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->dateTime('M d, Y h:i A')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->dateTime('M d, Y h:i A')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
@@ -54,12 +65,48 @@ class DepartmentsTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                ViewAction::make(),
+                EditAction::make()->color('info'),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
             ]);
+    }
+
+    private static function resolveDepartmentColor(?string $code, ?string $color): string|array
+    {
+        if ($color) {
+            return self::normalizeDepartmentColor($color);
+        }
+
+        return self::normalizeDepartmentColor(match (strtoupper($code ?? '')) {
+            'SITE' => 'purple',
+            'SBAHM' => 'yellow',
+            'SNAHS' => 'red',
+            'SASTE' => 'blue',
+            default => 'gray',
+        });
+    }
+
+    private static function normalizeDepartmentColor(string $color): string|array
+    {
+        $normalized = strtolower(trim($color));
+        $hex = match ($normalized) {
+            'purple' => '#7c3aed',
+            'yellow' => '#eab308',
+            'red' => '#ef4444',
+            'blue' => '#3b82f6',
+            'gray' => '#6b7280',
+            default => str_starts_with($normalized, '#') ? $normalized : null,
+        };
+
+        if ($hex) {
+            return Color::hex($hex);
+        }
+
+        return $normalized;
     }
 }

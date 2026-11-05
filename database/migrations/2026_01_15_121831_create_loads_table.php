@@ -18,10 +18,14 @@ return new class extends Migration
             $table->foreignId('section_id')->constrained()->onDelete('cascade');
             $table->string('year');
             $table->enum('semester', ['1st Semester', '2nd Semester', 'Summer']);
+            $table->date('due_date');
             $table->text('schedule')->nullable();
             $table->boolean('status')->default(false);
+            $table->timestamp('submitted_at')->nullable();
+            $table->timestamp('week_before_notified_at')->nullable();
+            $table->timestamp('overdue_notified_at')->nullable();
             $table->timestamps();
-            
+
             // Ensure a faculty can't have duplicate loads for the same subject and section in the same semester
             $table->unique(['faculty_id', 'subject_id', 'section_id', 'year', 'semester'], 'unique_load_assignment');
         });

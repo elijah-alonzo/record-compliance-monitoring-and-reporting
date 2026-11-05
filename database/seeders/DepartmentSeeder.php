@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Department;
+use App\Features\Departments\Models\Department;
 use Illuminate\Database\Seeder;
 
 class DepartmentSeeder extends Seeder
@@ -13,10 +13,10 @@ class DepartmentSeeder extends Seeder
     public function run(): void
     {
         $departments = [
-            ['code' => 'SITE', 'name' => 'School of Information Technology and Engineering'],
-            ['code' => 'SBAHM', 'name' => 'School of Business, Accountancy, and Hospitality Management'],
-            ['code' => 'SNAHS', 'name' => 'School of Nursing and Allied Health Sciences'],
-            ['code' => 'SASTE', 'name' => 'School of Arts Sciences and Teacher Education'],
+            ['code' => 'SITE', 'name' => 'School of Information Technology and Engineering', 'color' => 'purple'],
+            ['code' => 'SBAHM', 'name' => 'School of Business, Accountancy, and Hospitality Management', 'color' => 'yellow'],
+            ['code' => 'SNAHS', 'name' => 'School of Nursing and Allied Health Sciences', 'color' => 'red'],
+            ['code' => 'SASTE', 'name' => 'School of Arts Sciences and Teacher Education', 'color' => 'blue'],
         ];
 
         foreach ($departments as $department) {

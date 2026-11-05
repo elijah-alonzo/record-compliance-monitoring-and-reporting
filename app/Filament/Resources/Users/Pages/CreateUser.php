@@ -9,7 +9,7 @@ class CreateUser extends CreateRecord
 {
     protected static string $resource = UserResource::class;
 
-    protected ?string $heading = 'Create Registrar Staff';
+    protected ?string $heading = 'Create User';
 
     protected function getRedirectUrl(): string
     {

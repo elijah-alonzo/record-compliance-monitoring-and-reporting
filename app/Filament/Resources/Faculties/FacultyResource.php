@@ -2,16 +2,16 @@
 
 namespace App\Filament\Resources\Faculties;
 
+use App\Features\Faculties\Models\Faculty;
 use App\Filament\Resources\Faculties\Pages\CreateFaculty;
 use App\Filament\Resources\Faculties\Pages\EditFaculty;
 use App\Filament\Resources\Faculties\Pages\ListFaculties;
+use App\Filament\Resources\Faculties\Pages\ViewFaculty;
 use App\Filament\Resources\Faculties\Schemas\FacultyForm;
 use App\Filament\Resources\Faculties\Tables\FacultiesTable;
-use App\Models\Faculty;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 
@@ -23,7 +23,11 @@ class FacultyResource extends Resource
 
     protected static ?string $navigationLabel = 'Faculty';
 
-    protected static UnitEnum|string|null $navigationGroup = 'User Management';
+    protected static ?string $modelLabel = 'Faculty';
+
+    protected static ?string $pluralModelLabel = 'Faculty';
+
+    protected static UnitEnum|string|null $navigationGroup = 'Academic Management';
 
     public static function form(Schema $schema): Schema
     {
@@ -47,6 +51,7 @@ class FacultyResource extends Resource
         return [
             'index' => ListFaculties::route('/'),
             'create' => CreateFaculty::route('/create'),
+            'view' => ViewFaculty::route('/{record}'),
             'edit' => EditFaculty::route('/{record}/edit'),
         ];
     }

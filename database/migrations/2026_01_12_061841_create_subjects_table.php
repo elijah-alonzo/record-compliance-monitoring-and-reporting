@@ -13,11 +13,16 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
+            $table->string('subject_code');
             $table->string('name');
             $table->integer('units');
             $table->enum('type', ['Major', 'Minor']);
+            $table->foreignId('course_id')->nullable()->constrained('courses')->nullOnDelete();
             $table->text('description')->nullable();
             $table->timestamps();
+
+            $table->unique('subject_code');
+            $table->unique('name');
         });
     }
 

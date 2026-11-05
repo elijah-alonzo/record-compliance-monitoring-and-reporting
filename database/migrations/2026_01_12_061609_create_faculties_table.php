@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('faculties', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->enum('employment_type', ['Full-Time', 'Part-Time']);
+            $table->string('first_name');
+            $table->string('middle_name')->nullable();
+            $table->string('last_name');
+            $table->enum('employment_type', ['Shared Faculty', 'Full-Time Faculty', 'Part-Time Faculty']);
             $table->foreignId('department_id')->constrained()->onDelete('cascade');
             $table->string('email')->nullable();
             $table->string('phone')->nullable();

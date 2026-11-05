@@ -10,6 +10,21 @@ class EditLoad extends EditRecord
 {
     protected static string $resource = LoadResource::class;
 
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $isSubmitted = (bool) ($data['status'] ?? false);
+
+        if (! $isSubmitted) {
+            $data['submitted_at'] = null;
+
+            return $data;
+        }
+
+        $data['submitted_at'] = $this->record->submitted_at ?? now();
+
+        return $data;
+    }
+
     protected function getHeaderActions(): array
     {
         return [

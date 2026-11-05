@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Department;
-use App\Models\Faculty;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Features\Departments\Models\Department;
+use App\Features\Faculties\Enums\EmploymentType;
+use App\Features\Faculties\Models\Faculty;
 use Illuminate\Database\Seeder;
 
 class FacultySeeder extends Seeder
@@ -18,41 +18,61 @@ class FacultySeeder extends Seeder
 
         if ($departments->isEmpty()) {
             $this->command->warn('No departments found. Please run DepartmentSeeder first.');
+
             return;
         }
 
         $faculties = [
             [
-                'name' => 'Serafin Gazzingan',
-                'employment_type' => 'Full-Time',
+                'first_name' => 'Maria',
+                'middle_name' => null,
+                'last_name' => 'Shared Faculty',
+                'employment_type' => EmploymentType::Shared->value,
+                'department_id' => $departments->random()->id,
+                'email' => 'maria.shared@spup.edu',
+                'phone' => '+63 917 111 2222',
+            ],
+            [
+                'first_name' => 'Serafin',
+                'middle_name' => null,
+                'last_name' => 'Gazzingan',
+                'employment_type' => EmploymentType::FullTime->value,
                 'department_id' => $departments->random()->id,
                 'email' => 'serafin.gazzingan@spup.edu',
                 'phone' => '+63 917 123 4567',
             ],
             [
-                'name' => 'Rheychelle Antonio',
-                'employment_type' => 'Full-Time',
+                'first_name' => 'Rheychelle',
+                'middle_name' => null,
+                'last_name' => 'Antonio',
+                'employment_type' => EmploymentType::FullTime->value,
                 'department_id' => $departments->random()->id,
                 'email' => 'rheychelle.antonio@spup.edu',
                 'phone' => '+63 917 234 5678',
             ],
             [
-                'name' => 'Sheena Gumarang',
-                'employment_type' => 'Part-Time',
+                'first_name' => 'Sheena',
+                'middle_name' => null,
+                'last_name' => 'Gumarang',
+                'employment_type' => EmploymentType::PartTime->value,
                 'department_id' => $departments->random()->id,
                 'email' => 'sheena.gumarang@spup.edu',
                 'phone' => '+63 917 345 6789',
             ],
             [
-                'name' => 'Dr. Marifel Kummer',
-                'employment_type' => 'Full-Time',
+                'first_name' => 'Dr. Marifel',
+                'middle_name' => null,
+                'last_name' => 'Kummer',
+                'employment_type' => EmploymentType::FullTime->value,
                 'department_id' => $departments->random()->id,
                 'email' => 'marifel.kummer@spup.edu',
                 'phone' => '+63 917 456 7890',
             ],
             [
-                'name' => 'Justin Tan',
-                'employment_type' => 'Part-Time',
+                'first_name' => 'Justin',
+                'middle_name' => null,
+                'last_name' => 'Tan',
+                'employment_type' => EmploymentType::PartTime->value,
                 'department_id' => $departments->random()->id,
                 'email' => 'justin.tan@spup.edu',
                 'phone' => '+63 917 567 8901',
@@ -60,7 +80,8 @@ class FacultySeeder extends Seeder
         ];
 
         foreach ($faculties as $faculty) {
-            Faculty::create($faculty);
+            $faculty = Faculty::create($faculty);
+            $faculty->courses()->sync($faculty->department->courses()->pluck('id'));
         }
 
         $this->command->info('Faculty seeder completed successfully.');
