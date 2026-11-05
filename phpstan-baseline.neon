@@ -1,0 +1,517 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Using nullsafe property access "\?\-\>subject_code" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Features/ActivityLog/Concerns/LogsActivity.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Courses\\Models\\Course\:\:\$first_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Courses/Models/Course.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Courses\\Models\\Course\:\:\$second_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Courses/Models/Course.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Courses\\Models\\Course\:\:\$section\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Courses/Models/Course.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Courses\\Models\\Course\:\:\$subject\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Courses/Models/Course.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Courses\\Models\\Course\:\:\$summer_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Courses/Models/Course.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Courses\\Models\\Course\:\:\$year_level\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Courses/Models/Course.php
+
+		-
+			message: '#^Call to function method_exists\(\) with \$this\(App\\Features\\Courses\\Models\\Course\) and ''getHidden'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Features/Courses/Models/Course.php
+
+		-
+			message: '#^Relation ''section'' is not found in App\\Features\\Courses\\Models\\Course model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Courses/Models/Course.php
+
+		-
+			message: '#^Relation ''subject'' is not found in App\\Features\\Courses\\Models\\Course model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Courses/Models/Course.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Departments\\Models\\Department\:\:\$first_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Departments/Models/Department.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Departments\\Models\\Department\:\:\$second_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Departments/Models/Department.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Departments\\Models\\Department\:\:\$section\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Departments/Models/Department.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Departments\\Models\\Department\:\:\$subject\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Departments/Models/Department.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Departments\\Models\\Department\:\:\$summer_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Departments/Models/Department.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Departments\\Models\\Department\:\:\$year_level\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Departments/Models/Department.php
+
+		-
+			message: '#^Call to function method_exists\(\) with \$this\(App\\Features\\Departments\\Models\\Department\) and ''getHidden'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Features/Departments/Models/Department.php
+
+		-
+			message: '#^Relation ''section'' is not found in App\\Features\\Departments\\Models\\Department model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Departments/Models/Department.php
+
+		-
+			message: '#^Relation ''subject'' is not found in App\\Features\\Departments\\Models\\Department model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Departments/Models/Department.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Faculties\\Models\\Faculty\:\:\$faculties\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Faculties\\Models\\Faculty\:\:\$first_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Faculties\\Models\\Faculty\:\:\$second_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Faculties\\Models\\Faculty\:\:\$section\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Faculties\\Models\\Faculty\:\:\$subject\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Faculties\\Models\\Faculty\:\:\$summer_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Faculties\\Models\\Faculty\:\:\$year_level\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Call to function method_exists\(\) with \$this\(App\\Features\\Faculties\\Models\\Faculty\) and ''getHidden'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Relation ''faculties'' is not found in App\\Features\\Faculties\\Models\\Faculty model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Relation ''section'' is not found in App\\Features\\Faculties\\Models\\Faculty model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Relation ''subject'' is not found in App\\Features\\Faculties\\Models\\Faculty model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Faculties/Models/Faculty.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Loads\\Models\\Load\:\:\$first_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Loads/Models/Load.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Loads\\Models\\Load\:\:\$second_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Loads/Models/Load.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Loads\\Models\\Load\:\:\$summer_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Loads/Models/Load.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Loads\\Models\\Load\:\:\$year_level\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Loads/Models/Load.php
+
+		-
+			message: '#^Call to function method_exists\(\) with \$this\(App\\Features\\Loads\\Models\\Load\) and ''getHidden'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Features/Loads/Models/Load.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Sections\\Models\\Section\:\:\$faculties\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Sections\\Models\\Section\:\:\$first_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Sections\\Models\\Section\:\:\$second_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Sections\\Models\\Section\:\:\$section\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Sections\\Models\\Section\:\:\$subject\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Sections\\Models\\Section\:\:\$summer_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Call to function method_exists\(\) with \$this\(App\\Features\\Sections\\Models\\Section\) and ''getHidden'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Relation ''faculties'' is not found in App\\Features\\Sections\\Models\\Section model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Relation ''section'' is not found in App\\Features\\Sections\\Models\\Section model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Relation ''subject'' is not found in App\\Features\\Sections\\Models\\Section model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Features\\Sections\\Enums\\YearLevel\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Features/Sections/Models/Section.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Subjects\\Models\\Subject\:\:\$faculties\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Subjects\\Models\\Subject\:\:\$first_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Subjects\\Models\\Subject\:\:\$second_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Subjects\\Models\\Subject\:\:\$section\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Subjects\\Models\\Subject\:\:\$subject\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Subjects\\Models\\Subject\:\:\$summer_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Subjects\\Models\\Subject\:\:\$year_level\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Call to function method_exists\(\) with \$this\(App\\Features\\Subjects\\Models\\Subject\) and ''getHidden'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Relation ''faculties'' is not found in App\\Features\\Subjects\\Models\\Subject model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Relation ''section'' is not found in App\\Features\\Subjects\\Models\\Subject model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Relation ''subject'' is not found in App\\Features\\Subjects\\Models\\Subject model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Subjects/Models/Subject.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\SubmissionDeadlines\\Models\\SubmissionDeadline\:\:\$faculties\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/SubmissionDeadlines/Models/SubmissionDeadline.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\SubmissionDeadlines\\Models\\SubmissionDeadline\:\:\$section\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/SubmissionDeadlines/Models/SubmissionDeadline.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\SubmissionDeadlines\\Models\\SubmissionDeadline\:\:\$subject\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/SubmissionDeadlines/Models/SubmissionDeadline.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\SubmissionDeadlines\\Models\\SubmissionDeadline\:\:\$year_level\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/SubmissionDeadlines/Models/SubmissionDeadline.php
+
+		-
+			message: '#^Call to function method_exists\(\) with \$this\(App\\Features\\SubmissionDeadlines\\Models\\SubmissionDeadline\) and ''getHidden'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Features/SubmissionDeadlines/Models/SubmissionDeadline.php
+
+		-
+			message: '#^Relation ''faculties'' is not found in App\\Features\\SubmissionDeadlines\\Models\\SubmissionDeadline model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/SubmissionDeadlines/Models/SubmissionDeadline.php
+
+		-
+			message: '#^Relation ''section'' is not found in App\\Features\\SubmissionDeadlines\\Models\\SubmissionDeadline model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/SubmissionDeadlines/Models/SubmissionDeadline.php
+
+		-
+			message: '#^Relation ''subject'' is not found in App\\Features\\SubmissionDeadlines\\Models\\SubmissionDeadline model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/SubmissionDeadlines/Models/SubmissionDeadline.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Users\\Models\\User\:\:\$faculties\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Users\\Models\\User\:\:\$first_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Users\\Models\\User\:\:\$second_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Users\\Models\\User\:\:\$section\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Users\\Models\\User\:\:\$subject\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Users\\Models\\User\:\:\$summer_semester_deadline\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Users\\Models\\User\:\:\$year_level\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Call to function method_exists\(\) with \$this\(App\\Features\\Users\\Models\\User\) and ''getHidden'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Relation ''faculties'' is not found in App\\Features\\Users\\Models\\User model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Relation ''section'' is not found in App\\Features\\Users\\Models\\User model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Relation ''subject'' is not found in App\\Features\\Users\\Models\\User model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: app/Features/Users/Models/User.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$department_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Filament/Imports/CourseImporter.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$course_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Filament/Imports/SubjectImporter.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Filament/Imports/SubjectImporter.php
+
+		-
+			message: '#^Access to an undefined property App\\Filament\\Pages\\SubmissionDeadlineSettings\:\:\$form\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Filament/Pages/SubmissionDeadlineSettings.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>email" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Filament/Resources/ActivityLogs/Tables/ActivityLogsTable.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$faculties\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Filament/Resources/Loads/Pages/CreateLoad.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Filament/Resources/Loads/Schemas/LoadForm.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Faculties\\Models\\Faculty\:\:\$late_loads_count\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Filament/Widgets/FacultyWorkloadDistribution.php
+
+		-
+			message: '#^Access to an undefined property App\\Features\\Faculties\\Models\\Faculty\:\:\$late_rate\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Filament/Widgets/FacultyWorkloadDistribution.php
+
+		-
+			message: '#^Anonymous function should return int but returns float\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Filament/Widgets/OverdueUnsubmittedLoadsWidget.php
