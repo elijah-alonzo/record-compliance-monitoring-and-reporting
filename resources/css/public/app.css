@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+
+@source '../../js';
+
+@theme {
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+    --color-brand: #024427;
+    --color-brand-dark: #01311b;
+    --color-line: #e0e0e1;
+    --color-surface: #f6f6f7;
+    --color-ink: #111827;
+    --color-muted: #6b7280;
+    --color-ok: #16a34a;
+    --color-late: #dc2626;
+    --color-wait: #d97706;
+}
+
+@utility card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-line);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.08);
+}
+
+@utility page-width {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
