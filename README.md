@@ -1,27 +1,27 @@
 <div align="center">
-    
-![submission-tracking-app](public/sys-logo.png)
+
+[![compliance-monitoring-and-reporting-app](public/logo-02.png)](DEVDOCS.md)
 
 </div>
 
-An application developed to help the dean monitor faculty grading sheet submissions and identify late or missing submissions. The system provides centralized faculty and teaching load management, while its dashboard presents report metrics that evaluate submission compliance and help the dean monitor faculty performance. 
+<p>A compliance monitoring and reporting system developed to automate the tracking of faculty grading sheet submissions at John Wesley College, replacing paper logbooks and manual follow-ups with one online dashboard. The system allows registrar staff to assign teaching loads, set submission deadlines and record each grading sheet as it comes in, and gives administrators the tools to spot late or missing submissions, remind faculty by email, and print compliance reports.</p>
 
-![submission-tracking-app](docs/screenshots/landing-page.png)
+[![compliance-monitoring-and-reporting-app](docs/demo-img-01.png)](docs/demo-img-01.png)
 
 ### Dashboard
 
-The Dashboard provides an overview of submission compliance through report metrics. It allows the dean to quickly identify late and missing submissions and evaluate submission performance without manually reviewing individual records.
+The Dashboard gives the registrar an overview of submission compliance at a glance. It shows how many grading sheets came in on time, late or are still pending, which faculty members are most often late, and which loads are already past their deadline. This replaces counting records by hand at the end of every term, so problems can be spotted and followed up while there is still time.
 
-![submission-tracking-app](docs/screenshots/dashboard.jpg)
+[![compliance-monitoring-and-reporting-app](docs/demo-img-02.png)](docs/demo-img-02.png)
 
-### Faculty Management
+### Teaching Load Management
 
-The Faculty Management section allows administrators to manage faculty information used by the system. By keeping faculty records organized in one place, the system makes it easier to maintain accurate information and associate grading sheet submissions with the appropriate faculty members.
+The Teaching Load Management page lists every subject and section assigned to each faculty member, together with its deadline and whether its grading sheet has been submitted. Marking a sheet as received takes one click, and the system works out whether it arrived on time or late. Faculty are emailed when a load is assigned, a week before it is due, and when it becomes overdue, replacing phone calls and printed reminders.
 
-![submission-tracking-app](docs/screenshots/faculty-management.jpg)
+[![compliance-monitoring-and-reporting-app](docs/demo-img-03.png)](docs/demo-img-03.png)
 
-### Teaching Loads
+### Faculty Profile Management
 
-The Teaching Loads section manages faculty teaching assignments and curriculum-related information. This provides the system with the necessary information to determine the grading sheets expected from each faculty member and helps establish which submissions need to be monitored.
+The Faculty Profile Management page keeps every faculty member's details in one place: department, employment type, courses handled and contact information. Records can be added one by one or imported in bulk from a spreadsheet, making it easy to keep the roster accurate and to link each grading sheet to the right person.
 
-![submission-tracking-app](docs/screenshots/teaching-loads.jpg)
+[![compliance-monitoring-and-reporting-app](docs/demo-img-04.png)](docs/demo-img-04.png)
