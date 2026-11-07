@@ -1,5 +1,37 @@
-.git
-vendor
-node_modules
+# Rebuilt inside the image
+/vendor
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/public/js/filament
+/public/css/filament
+/public/fonts/filament
+/bootstrap/cache/*.php
+
+# Local state and secrets: never baked into the image
 .env
-database/*.sqlite
+.env.*
+!.env.example
+/database/*.sqlite
+/storage/app/private/*
+/storage/app/public/*
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/storage/*.key
+
+# Not needed to run the app
+.git
+.github
+Dockerfile
+docker-compose.yml
+/tests
+/docs
+phpunit.xml
+.phpunit.cache
+.phpunit.result.cache
+.phpstan.cache
+desktop.ini
+.DS_Store

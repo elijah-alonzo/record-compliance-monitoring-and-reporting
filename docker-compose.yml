@@ -1,6 +1,58 @@
-# Untested: written for show, no Docker available locally.
+# Runs the production image (Dockerfile) on port 8080, data in the `storage` volume.
+# Values come from the shell or a .env file next to this one, e.g.
+#   APP_KEY=base64:...                  (required; echo "base64:$(openssl rand -base64 32)")
+#   APP_URL=https://compliance.example.com
+#   ADMIN_EMAIL=you@example.com
+#   ADMIN_PASSWORD=a-long-password      (required; the first admin, created on first start)
+#   MAIL_MAILER=smtp, MAIL_HOST, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD, MAIL_FROM_ADDRESS
+#                                       (faculty emails; without them mail is only logged)
+#
+#   docker compose up -d --build
+#
+# `scheduler` runs the same image to send the daily deadline and overdue emails.
+
+x-app-environment: &app-environment
+    APP_NAME: ${APP_NAME:-JWC Compliance Monitoring and Reporting System}
+    APP_KEY: ${APP_KEY:?set APP_KEY}
+    APP_URL: ${APP_URL:-http://localhost:8080}
+    APP_TIMEZONE: ${APP_TIMEZONE:-Asia/Manila}
+    MAIL_MAILER: ${MAIL_MAILER:-log}
+    MAIL_HOST: ${MAIL_HOST:-127.0.0.1}
+    MAIL_PORT: ${MAIL_PORT:-587}
+    MAIL_USERNAME: ${MAIL_USERNAME:-}
+    MAIL_PASSWORD: ${MAIL_PASSWORD:-}
+    MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS:-grading@example.com}
+    MAIL_FROM_NAME: ${MAIL_FROM_NAME:-JWC Registrar}
+
 services:
-  app:
-    build: .
-    ports:
-      - "8000:8000"
+    app:
+        build: .
+        image: cmrs
+        restart: unless-stopped
+        ports:
+            - '${APP_PORT:-8080}:8080'
+        environment:
+            <<: *app-environment
+            ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@app.com}
+            ADMIN_PASSWORD: ${ADMIN_PASSWORD:?set ADMIN_PASSWORD}
+        volumes:
+            - storage:/var/www/html/storage
+
+    scheduler:
+        image: cmrs
+        restart: unless-stopped
+        command: ['php', '/var/www/html/artisan', 'schedule:work']
+        stop_signal: SIGTERM
+        healthcheck:
+            test: ['CMD', 'healthcheck-schedule']
+            start_period: 10s
+        environment:
+            <<: *app-environment
+            AUTORUN_ENABLED: 'false'
+        volumes:
+            - storage:/var/www/html/storage
+        depends_on:
+            - app
+
+volumes:
+    storage:
