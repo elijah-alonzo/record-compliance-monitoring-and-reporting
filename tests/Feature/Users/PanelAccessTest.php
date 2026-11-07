@@ -1,16 +1,16 @@
 <?php
 
 use App\Features\Users\Models\User;
-use Database\Seeders\AdminUserSeeder;
+use Database\Seeders\DatabaseSeeder;
 
 it('sends guests to the login page', function () {
     $this->get('/registrar')->assertRedirect('/registrar/login');
 });
 
 it('lets the seeded admin open the dashboard', function () {
-    $this->seed(AdminUserSeeder::class);
+    $this->seed(DatabaseSeeder::class);
 
-    $this->actingAs(User::where('email', 'admin@registrar.com')->firstOrFail())
+    $this->actingAs(User::where('email', config('app.admin.email'))->firstOrFail())
         ->get('/registrar')
         ->assertOk();
 });

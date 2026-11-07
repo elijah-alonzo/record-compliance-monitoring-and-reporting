@@ -1,11 +1,11 @@
 <?php
 
 use App\Features\Users\Models\User;
-use Database\Seeders\AdminUserSeeder;
+use Database\Seeders\DatabaseSeeder;
 
 beforeEach(function () {
-    $this->seed(AdminUserSeeder::class);
-    $this->actingAs(User::where('email', 'admin@registrar.com')->firstOrFail());
+    $this->seed(DatabaseSeeder::class);
+    $this->actingAs(User::where('email', config('app.admin.email'))->firstOrFail());
 });
 
 it('sends guests to the login page', function () {

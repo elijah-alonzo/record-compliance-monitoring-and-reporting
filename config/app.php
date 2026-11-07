@@ -123,4 +123,19 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | First Admin
+    |--------------------------------------------------------------------------
+    |
+    | The one account DatabaseSeeder creates. Set ADMIN_EMAIL and
+    | ADMIN_PASSWORD before seeding a real deployment.
+    |
+    */
+
+    'admin' => [
+        'email' => env('ADMIN_EMAIL', 'admin@app.com'),
+        'password' => env('ADMIN_PASSWORD', 'password'),
+    ],
+
 ];

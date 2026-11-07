@@ -72,7 +72,7 @@ function makeLoad(array $attributes = [], ?Faculty $faculty = null): Load
     static $n = 0;
     $n++;
 
-    $department = Department::query()->firstOrCreate(['code' => 'DEP'], ['name' => 'Department', 'color' => '#024427']);
+    $department = Department::query()->firstOrCreate(['code' => 'DEP'], ['name' => 'Department', 'color' => '#030454']);
     $course = Course::query()->firstOrCreate(['code' => 'CRS'], ['name' => 'Course', 'department_id' => $department->id]);
 
     $faculty ??= Faculty::query()->create([
