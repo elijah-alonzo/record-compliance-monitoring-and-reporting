@@ -29,7 +29,7 @@ class SectionForm
                             ->unique(ignoreRecord: true, modifyRuleUsing: fn (Unique $rule, Get $get): Unique => $rule
                                 ->where('year_level', $get('year_level'))
                                 ->where('course_id', $get('course_id')))
-                            ->placeholder('Enter section code (e.g., BSN1, BSCS2)'),
+                            ->placeholder('Enter section code (e.g., BEED1, BTH2)'),
 
                         Select::make('year_level')
                             ->prefixIcon('heroicon-o-calendar')

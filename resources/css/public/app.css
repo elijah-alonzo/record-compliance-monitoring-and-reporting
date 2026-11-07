@@ -5,12 +5,15 @@
 @theme {
     --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 
-    --color-brand: #024427;
-    --color-brand-dark: #01311b;
-    --color-line: #e0e0e1;
-    --color-surface: #f6f6f7;
-    --color-ink: #111827;
-    --color-muted: #6b7280;
+    --color-brand: #030454;
+    --color-brand-dark: #02023a;
+    --color-brand-light: #1a1c6e;
+    --color-gold: #f5be22;
+    --color-gold-dark: #d9a510;
+    --color-line: #e2e3ec;
+    --color-surface: #f5f6fa;
+    --color-ink: #0b0c2a;
+    --color-muted: #5b5e78;
     --color-ok: #16a34a;
     --color-late: #dc2626;
     --color-wait: #d97706;
@@ -19,7 +22,7 @@
 @utility card {
     background-color: #ffffff;
     border: 1px solid var(--color-line);
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.08);
+    box-shadow: 0 1px 3px 0 rgb(3 4 84 / 0.08);
 }
 
 @utility page-width {

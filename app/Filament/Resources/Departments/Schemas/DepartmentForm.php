@@ -22,7 +22,7 @@ class DepartmentForm
                             ->required()
                             ->maxLength(10)
                             ->unique(ignoreRecord: true)
-                            ->placeholder('Enter department code (e.g., CIT)')
+                            ->placeholder('Enter department code (e.g., CTE)')
                             ->columnSpan(1),
 
                         TextInput::make('name')

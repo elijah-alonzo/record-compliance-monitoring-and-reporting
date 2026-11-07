@@ -31,7 +31,7 @@ class CoursesRelationManager extends RelationManager
                     ->required()
                     ->maxLength(50)
                     ->unique(ignoreRecord: true)
-                    ->placeholder('e.g. BSIT'),
+                    ->placeholder('e.g. BEEd'),
 
                 TextInput::make('name')
                     ->label('Course Name')

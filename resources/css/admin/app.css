@@ -4,17 +4,17 @@
 @source '../../../resources/views/filament/**/*';
 
 :root {
-    --primary-50: #024427;
-    --primary-100: #024427;
-    --primary-200: #024427;
-    --primary-300: #024427;
-    --primary-400: #024427;
-    --primary-500: #024427;
-    --primary-600: #024427;
-    --primary-700: #024427;
-    --primary-800: #024427;
+    --primary-50: #030454;
+    --primary-100: #030454;
+    --primary-200: #030454;
+    --primary-300: #030454;
+    --primary-400: #030454;
+    --primary-500: #030454;
+    --primary-600: #030454;
+    --primary-700: #030454;
+    --primary-800: #030454;
     --primary-900: #ffffff;
-    --primary-950: #024427;
+    --primary-950: #030454;
 }
 
 .fi-simple-main {
@@ -56,7 +56,7 @@
 }
 
 .fi-ta-header-toolbar {
-    background-color: var(--brand-green) !important;
+    background-color: #ffffff !important;
     border-radius: 0 !important;
     padding: 0.75rem 1rem !important;
 }

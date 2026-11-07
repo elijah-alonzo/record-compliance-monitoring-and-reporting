@@ -21,13 +21,13 @@ class SubjectImporter extends Importer
                 ->label('Subject Code')
                 ->requiredMapping()
                 ->rules(['required', 'max:50'])
-                ->example('MATH101'),
+                ->example('EDUC101'),
 
             ImportColumn::make('name')
                 ->label('Subject Name')
                 ->requiredMapping()
                 ->rules(['required', 'max:255'])
-                ->example('Calculus'),
+                ->example('The Teaching Profession'),
 
             ImportColumn::make('units')
                 ->label('Units')
@@ -49,13 +49,13 @@ class SubjectImporter extends Importer
                 ->label('Course (Major only)')
                 ->relationship('course', resolveUsing: ['code', 'name'])
                 ->rules(['nullable', 'required_if:type,Major'])
-                ->example('BSIT'),
+                ->example('BEEd'),
 
             ImportColumn::make('description')
                 ->label('Description')
                 ->rules(['nullable', 'max:65535'])
                 ->ignoreBlankState()
-                ->example('Differential and integral calculus.'),
+                ->example('Foundations, roles, and ethics of the teaching profession.'),
         ];
     }
 

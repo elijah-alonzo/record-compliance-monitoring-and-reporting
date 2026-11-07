@@ -54,7 +54,7 @@ class LoadSubmissionProgressWidget extends ChartWidget
                 [
                     'label' => 'Teaching Loads',
                     'data' => [$submitted, $pending],
-                    'backgroundColor' => ['#16a34a', '#f59e0b'],
+                    'backgroundColor' => ['#030454', '#f5be22'],
                 ],
             ],
             'labels' => ['Submitted', 'Pending'],

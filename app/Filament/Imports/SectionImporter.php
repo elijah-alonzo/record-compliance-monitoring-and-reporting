@@ -23,7 +23,7 @@ class SectionImporter extends Importer
                 ->label('Section Code')
                 ->requiredMapping()
                 ->rules(['required', 'max:10'])
-                ->example('BSCS1'),
+                ->example('BEED1'),
 
             ImportColumn::make('year_level')
                 ->label('Year Level')
@@ -39,7 +39,7 @@ class SectionImporter extends Importer
                 ->requiredMapping()
                 ->relationship('department', resolveUsing: ['code', 'name'])
                 ->rules(['required'])
-                ->example('CS'),
+                ->example('CTE'),
 
             ImportColumn::make('course')
                 ->label('Course Code or Name')
@@ -64,7 +64,7 @@ class SectionImporter extends Importer
                     return $query->first();
                 })
                 ->rules(['required'])
-                ->example('BS Computer Science'),
+                ->example('Bachelor of Elementary Education'),
         ];
     }
 

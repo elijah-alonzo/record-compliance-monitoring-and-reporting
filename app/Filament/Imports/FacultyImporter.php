@@ -50,7 +50,7 @@ class FacultyImporter extends Importer
                 ->requiredMapping()
                 ->relationship('department', resolveUsing: ['code', 'name'])
                 ->rules(['required'])
-                ->example('CS'),
+                ->example('CTE'),
 
             ImportColumn::make('courses')
                 ->label('Courses (comma-separated codes or names)')
@@ -61,7 +61,7 @@ class FacultyImporter extends Importer
                 ->saveRelationshipsUsing(fn (array $state, ImportColumn $column, Faculty $record) => $record->courses()->sync(
                     $column->resolveRelatedRecords($state)?->modelKeys() ?? [],
                 ))
-                ->example('BSIT,BSCS'),
+                ->example('BEEd,BTh'),
 
             ImportColumn::make('email')
                 ->label('Email')

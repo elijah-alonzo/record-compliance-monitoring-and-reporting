@@ -42,8 +42,9 @@ class RegistrarPanelProvider extends PanelProvider
             ])
             ->font('Poppins')
             ->maxContentWidth(Width::Full)
-            ->brandName('SPUP Grading System')
-            ->brandLogo(asset('sys-logo.png'))
+            ->brandName('John Wesley College')
+            ->brandLogo(asset('logo-02.png'))
+            ->favicon(asset('logo-01.png'))
             ->brandLogoHeight('3rem')
             ->plugins([
                 FilamentShieldPlugin::make()

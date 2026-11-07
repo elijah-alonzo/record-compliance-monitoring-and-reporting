@@ -21,19 +21,19 @@ class CourseImporter extends Importer
                 ->requiredMappingForNewRecordsOnly(fn (Importer $importer): bool => blank($importer->getOptions()['department_id'] ?? null))
                 ->relationship('department', resolveUsing: ['code', 'name'])
                 ->rules(['required'])
-                ->example('CS'),
+                ->example('CTE'),
 
             ImportColumn::make('code')
                 ->label('Course Code')
                 ->requiredMapping()
                 ->rules(['required', 'max:50'])
-                ->example('BSCS'),
+                ->example('BEEd'),
 
             ImportColumn::make('name')
                 ->label('Course Name')
                 ->requiredMapping()
                 ->rules(['required', 'max:255'])
-                ->example('BS Computer Science'),
+                ->example('Bachelor of Elementary Education'),
 
             ImportColumn::make('description')
                 ->label('Description')

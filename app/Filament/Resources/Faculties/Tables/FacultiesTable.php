@@ -99,10 +99,9 @@ class FacultiesTable
         }
 
         return match (strtoupper($code ?? '')) {
-            'SITE' => 'purple',
-            'SBAHM' => 'yellow',
-            'SNAHS' => 'red',
-            'SASTE' => 'blue',
+            'CTE' => 'blue',
+            'CTM' => 'yellow',
+            'CMU' => 'red',
             default => 'gray',
         };
     }

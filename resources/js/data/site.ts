@@ -1,3 +1,13 @@
+export const college = {
+    name: 'John Wesley College',
+    city: 'Tuguegarao City, Cagayan',
+    founded: 1989,
+    motto: 'The world is my parish',
+    address: '57 College Avenue, San Gabriel, Tuguegarao City, Cagayan 3500, Philippines',
+} as const;
+
+export const systemName = 'Compliance Monitoring and Reporting System';
+
 export const navLinks = [
     { label: 'Features', href: '#features' },
     { label: 'About', href: '#about' },
@@ -20,6 +30,12 @@ export const previewStats: PreviewStat[] = [
     { label: 'Late Submissions', value: 12, note: '10.0% of all loads', tone: 'late' },
     { label: 'Pending Submissions', value: 22, note: '18.3% of all loads', tone: 'wait' },
 ];
+
+export const highlights = [
+    { value: '3', label: 'Submission states tracked' },
+    { value: '4', label: 'Printable compliance reports' },
+    { value: '3', label: 'Automatic email reminders' },
+] as const;
 
 export const features = [
     {
@@ -46,10 +62,4 @@ export const features = [
         title: 'Activity Logs',
         text: 'Every change is recorded, so submission history stays transparent and easy to audit.',
     },
-] as const;
-
-export const contactLinks = [
-    { label: 'St. Paul University Philippines Facebook', href: 'https://www.facebook.com/spupofficial' },
-    { label: 'St. Paul University Philippines', href: 'https://spup.edu.ph' },
-    { label: 'School of Information Technology and Engineering', href: 'https://www.facebook.com/spupsite' },
 ] as const;
