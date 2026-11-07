@@ -16,21 +16,6 @@ export const navLinks = [
 
 export const signInUrl = '/registrar/login';
 
-export type Tone = 'ok' | 'late' | 'wait';
-
-export interface PreviewStat {
-    label: string;
-    value: number;
-    note: string;
-    tone: Tone;
-}
-
-export const previewStats: PreviewStat[] = [
-    { label: 'On-Time Submissions', value: 86, note: '71.7% of all loads', tone: 'ok' },
-    { label: 'Late Submissions', value: 12, note: '10.0% of all loads', tone: 'late' },
-    { label: 'Pending Submissions', value: 22, note: '18.3% of all loads', tone: 'wait' },
-];
-
 export const highlights = [
     { value: '3', label: 'Submission states tracked' },
     { value: '4', label: 'Printable compliance reports' },
