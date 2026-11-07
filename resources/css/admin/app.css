@@ -21,9 +21,16 @@
     border-radius: 0 !important;
 }
 
+/* Shell colours, matching the public landing page (resources/css/public/app.css) */
+:root {
+    --shell-navy: #030454;
+    --shell-navy-light: #1a1c6e;
+    --shell-gold: #f5be22;
+}
+
 .fi-topbar {
     background-color: #ffffff !important;
-    border-bottom: 1px solid #e0e0e1;
+    border-bottom: 3px solid var(--shell-gold);
     box-shadow: none;
 }
 
@@ -31,21 +38,84 @@
     display: none !important;
 }
 
-.fi-sidebar-nav {
-    background-color: #ffffff;
-    border-right: 1px solid #e0e0e1;
+/* Navy sidebar. The mobile drawer's logo header (.fi-sidebar-header) keeps Filament's white background. */
+.fi-sidebar {
+    background-color: var(--shell-navy);
 }
 
-.fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+.fi-sidebar-nav {
+    scrollbar-color: rgb(255 255 255 / 0.2) transparent;
+}
+
+.fi-sidebar-group-label {
+    color: rgb(255 255 255 / 0.5);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.fi-sidebar-group-btn .fi-icon,
+.fi-sidebar-group-dropdown-trigger-btn .fi-icon,
+.fi-sidebar-item-btn > .fi-icon,
+.fi-sidebar-database-notifications-btn > .fi-icon {
+    color: rgb(255 255 255 / 0.6);
+}
+
+.fi-sidebar-item-label,
+.fi-sidebar-database-notifications-btn > .fi-sidebar-database-notifications-btn-label {
+    color: rgb(255 255 255 / 0.8);
+}
+
+.fi-sidebar-item-btn,
+.fi-sidebar-group-dropdown-trigger-btn,
+.fi-sidebar-database-notifications-btn {
     border-radius: 0 !important;
-    border-left: 3px solid var(--primary-500);
-    background-color: #eeeeee;
+}
+
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover,
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:focus-visible,
+.fi-sidebar-group-dropdown-trigger-btn:hover,
+.fi-sidebar-group-dropdown-trigger-btn:focus-visible,
+.fi-sidebar-database-notifications-btn:hover,
+.fi-sidebar-database-notifications-btn:focus-visible {
+    background-color: rgb(255 255 255 / 0.08);
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn,
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn:hover {
+    border-left: 3px solid var(--shell-gold);
+    background-color: var(--shell-navy-light);
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-sidebar-item-label {
+    color: #ffffff;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-icon,
+.fi-sidebar-group.fi-active .fi-sidebar-group-dropdown-trigger-btn .fi-icon {
+    color: var(--shell-gold);
+}
+
+.fi-sidebar-item-grouped-border-part-not-first,
+.fi-sidebar-item-grouped-border-part-not-last {
+    background-color: rgb(255 255 255 / 0.2);
+}
+
+.fi-sidebar-item-grouped-border-part {
+    background-color: rgb(255 255 255 / 0.4);
+}
+
+.fi-sidebar-item.fi-active
+    > .fi-sidebar-item-btn
+    > .fi-sidebar-item-grouped-border
+    > .fi-sidebar-item-grouped-border-part {
+    background-color: var(--shell-gold);
 }
 
 .fi-sidebar-item-badge-ctn .fi-badge {
-    background-color: var(--primary-100);
-    color: var(--primary-700);
-    --tw-ring-color: var(--primary-600);
+    background-color: var(--shell-gold);
+    color: var(--shell-navy);
+    --tw-ring-color: transparent;
 }
 
 .fi-ta-ctn {
